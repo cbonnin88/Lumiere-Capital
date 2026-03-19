@@ -4,11 +4,6 @@ setup(
     name="lumiere_capital_pipeline",
     version="0.0.1",
     packages=find_packages(),
-    package_data={
-        "lumiere_capital_pipeline": [
-            "dbt-project/**/*",
-        ],
-    },
     install_requires=[
         "dagster",
         "dagster-cloud",
