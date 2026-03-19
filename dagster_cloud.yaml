@@ -1,6 +1,0 @@
-locations:
-- build:
-    directory: ./lumiere_capital
-  code_source:
-    module_name: lumiere_capital.definitions
-  location_name: lumiere_capital
