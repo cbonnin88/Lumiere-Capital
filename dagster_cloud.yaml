@@ -1,0 +1,6 @@
+locations:
+- build:
+    directory: ./GitHub
+  code_source:
+    module_name: GitHub.definitions
+  location_name: GitHub
