@@ -1,0 +1,11 @@
+lumiere_capital:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      catalog: lumiere_capital
+      schema: prepared
+      host: "{{env_var('dbc-454ecf29-129f.cloud.databricks.com')}}"
+      http_path: "{{env_var('/sql/1.0/warehouses/146901410075642b')}}"
+      token: "{{env_var('DATABRICKS_TOKEN')}}"
+      threads: 4
