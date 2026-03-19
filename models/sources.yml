@@ -1,0 +1,8 @@
+version: 2
+sources:
+  - name: airbyte_raw
+    database: lumiere_capital
+    schema: raw
+    tables:
+      - name: src_companies
+      - name: src_investments
