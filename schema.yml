@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_companies
+    description: 'Staging Table for Europe Green-Tech firms. Data sourced from Airbyte.'
+    columns:
+      - name: company_id
+        description: 'The Primary Key for the company.'
+        data_tests:
+          - not_null
+          - unique
+  
+  - name: stg_investments
+    description: 'Staging table for financial transcations from Lumiere Capital'
+    columns:
+      - name: trasncation_id
+        data_tests:
+          - not_null
+          - unique
+      - name: company_id
+        description: 'Foreign key to the companies table.'
+        data_tests:
+          - not_null
+          - relationships:
+              column_name: ref('stg_companies')
+              arguments: company_id
+          
+          
+          
