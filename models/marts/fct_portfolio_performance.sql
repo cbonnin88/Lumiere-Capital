@@ -1,23 +1,21 @@
 WITH companies AS (
-    SELECT 
-        CAST(company_id AS INT) as company_id, 
-        company_name, 
-        sector, 
-        country, 
-        esg_score 
-    FROM {{ ref('stg_companies') }}
+    SELECT * FROM {{ ref('stg_companies') }}
 ),
 investments AS (
-    SELECT 
-        CAST(company_id AS INT) as company_id, 
-        amount_invested_eur 
-    FROM {{ ref('stg_investments') }}
+    SELECT * FROM {{ ref('stg_investments') }}
 )
 
-SELECT 
-    i.*, 
-    c.company_name, 
+SELECT
+    i.transcations_id,
+    i.company_id,
+    c.company_name,
     c.sector,
-    COALESCE(i.amount_invested_eur * (1 + (c.esg_score / 50)), 0) as current_estimated_value
+    c.country,
+    c.esg_score,
+    i.amount_invested_eur,
+    -- Simple logic: Valuation = Invested * (ESG Score / 20)
+    (i.amount_invested_eur * (c.esg_score / 20.0)) AS current_estimated_value,
+    -- MOIC = Valuation / Invested
+    ((i.amount_invested_eur * (c.esg_score / 20.0)) / NULLIF(i.amount_invested_eur, 0)) AS moic
 FROM investments i
-INNER JOIN companies c ON i.company_id = c.company_id 
+INNER JOIN companies c ON i.company_id = c.company_id
