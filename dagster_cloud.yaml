@@ -1,0 +1,6 @@
+locations:
+- build:
+    directory: ./Lumiere_Capital
+  code_source:
+    module_name: Lumiere_Capital.definitions
+  location_name: Lumiere_Capital
