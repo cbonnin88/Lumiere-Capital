@@ -10,6 +10,7 @@ dependencies = [
     "dagster-dbt",
     "dbt-core<1.12",
     "dbt-databricks<1.12",
+    "polars"
 ]
 
 [project.optional-dependencies]
