@@ -14,7 +14,7 @@ env:
   ENABLE_FAST_DEPLOYS: 'true'
   PYTHON_VERSION: '3.10'
   DAGSTER_CLOUD_FILE: 'dagster_cloud.yaml'
-  DAGSTER_PROJECT_NAME: "Lumiere_Capital"
+  DAGSTER_PROJECT_NAME: "lumiere_capital_pipeline"
 
 jobs:
   dagster_cloud_default_deploy:
@@ -49,7 +49,7 @@ jobs:
         with:
           command: "ci check --project-dir project-repo --dagster-cloud-yaml-path ${{ env.DAGSTER_CLOUD_FILE }}"
         env:
-          DAGSTER_PROJECT_DIR: "Lumiere_Capital"
+          DAGSTER_PROJECT_DIR: "lumiere_capital_pipeline"
 
 
       - name: Initialize build session
