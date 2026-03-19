@@ -1,6 +1,0 @@
-locations:
-- build:
-    directory: ./lumiere_capital_pipeline
-  code_source:
-    module_name: lumiere_capital_pipeline.definitions
-  location_name: lumiere_capital_pipeline
