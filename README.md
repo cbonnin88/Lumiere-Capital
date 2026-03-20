@@ -17,7 +17,6 @@ The pipeline follows a modern "Medallion" architecture pattern:
 * **Data Engine**: [Polars](https://pola.rs/) (Optimized for vectorized operations)
 * **Compute**: [Databricks](https://www.databricks.com/) (All-Purpose Clusters)
 * **Orchestration**: [Apache Airflow 3.0](https://airflow.apache.org/) (via Astro CLI)
-* **Infrastructure**: Ngrok Tunnels & REST API Integration
 
 ---
 
