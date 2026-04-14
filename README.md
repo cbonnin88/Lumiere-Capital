@@ -1,3 +1,6 @@
+![Project Status](https://img.shields.io/badge/Status-Completed-success)
+![Stack](https://img.shields.io/badge/Stack-SQL_|_Python_|_Polars|_Databricks_|_Apache_Airflow_3.0-blue)
+
 # 📈 Lumiere Capital Investments: Automated Investment Pipeline
 
 An enterprise-grade data orchestration pipeline built to automate financial analytics. This project integrates **Polars** for high-performance data manipulation, **Databricks** for scalable cloud compute, and **Apache Airflow 3.0** for sophisticated workflow management.
